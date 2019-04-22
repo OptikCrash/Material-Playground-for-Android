@@ -12,6 +12,7 @@
     app:layout_behavior="@string/bottom_sheet_behavior"
 >
 
+
   <com.google.android.material.appbar.AppBarLayout
       android:id="@+id/bottom_sheet_appbar"
       android:layout_width="match_parent"
@@ -31,11 +32,11 @@
         app:titleTextColor="@color/colorAccent50"
     >
 
+      <!--Use this for peek content-->
       <androidx.appcompat.widget.LinearLayoutCompat
           android:id="@+id/bottom_sheet_peek"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:background="@color/colorAccent"
           android:padding="16dp"
           android:clickable="true"
           android:focusable="true"
@@ -53,36 +54,64 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Light.SearchResult.Title"
             android:text="Ad Space Goes Here!!!"/>
 
-      </androidx.appcompat.widget.LinearLayoutCompat>
 
-      <androidx.appcompat.widget.Toolbar
-          android:id="@+id/bottom_sheet_toolbar"
-          android:layout_width="match_parent"
-          android:layout_height="?attr/actionBarSize"
-          app:layout_collapseMode="pin"
-          app:popupTheme="@style/AppTheme.PopupOverlay"
-      >
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Stuff goes here..."
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                  android:text="Just a test text for a second..." android:textColor="@android:color/holo_green_light"
         />
 
-      </androidx.appcompat.widget.Toolbar>
+        <RadioGroup
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+          <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="radio 1"/>
+          <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="radio 2"/>
+          <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="radio 3"/>
+
+        </RadioGroup>
+
+      </androidx.appcompat.widget.LinearLayoutCompat>
 
     </com.google.android.material.appbar.CollapsingToolbarLayout>
 
+    <!--This Toolbar will morph into the top toolbar when fully expanded-->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/bottom_sheet_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_collapseMode="pin"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+    >
+
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="Changie title thingy"
+      />
+
+    </androidx.appcompat.widget.Toolbar>
+
   </com.google.android.material.appbar.AppBarLayout>
 
-
+  <!--Bottomsheet main content should go here-->
   <androidx.core.widget.NestedScrollView
       android:id="@+id/bottom_sheet_nested_scroll"
       android:orientation="vertical"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
+      android:padding="16dp"
+      app:layout_behavior="@string/appbar_scrolling_view_behavior"
   >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollHorizontally="false"
+        android:text="@string/bacon1"
+    />
 
   </androidx.core.widget.NestedScrollView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
