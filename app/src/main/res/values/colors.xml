@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary50">#FCE4EC</color>
+    <color name="colorPrimaryLight">#F8BBD0</color><!--Pink 100-->
+    <color name="colorPrimary200">#F48FB1</color>
+    <color name="colorPrimary300">#F06292</color>
+    <color name="colorPrimary400">#EC407A</color>
+    <color name="colorPrimary">#E91E63</color><!--Pink 500-->
+    <color name="colorPrimary600">#D81B60</color>
+    <color name="colorPrimary700">#C2185B</color>
+    <color name="colorPrimaryDark">#AD1457</color><!--Pink 800-->
+    <color name="colorPrimary900">#880E4F</color>
+    <color name="colorPrimaryA100">#FF80AB</color>
+    <color name="colorPrimaryA200">#FF4081</color>
+    <color name="colorPrimaryA400">#F50057</color>
+    <color name="colorPrimaryA700">#C51162</color>
+    <color name="colorAccent50">#EDE7F6</color>
+    <color name="colorAccent100">#D1C4E9</color>
+    <color name="colorAccent200">#B39DDB</color>
+    <color name="colorAccent300">#9575CD</color>
+    <color name="colorAccent400">#7E57C2</color>
+    <color name="colorAccent500">#673AB7</color>
+    <color name="colorAccent600">#5E35B1</color>
+    <color name="colorAccent700">#512DA8</color>
+    <color name="colorAccent800">#4527A0</color>
+    <color name="colorAccent900">#311B92</color>
+    <color name="colorAccentLight">#B388FF</color>
+    <color name="colorAccent">#7C4DFF</color><!--Deep Purple A200-->
+    <color name="colorAccentMedium">#651FFF</color>
+    <color name="colorAccentDark">#6200EA</color>
+</resources>
