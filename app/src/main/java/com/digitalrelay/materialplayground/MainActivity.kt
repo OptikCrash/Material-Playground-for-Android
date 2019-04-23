@@ -23,14 +23,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
-            drawer_layout.closeDrawer(GravityCompat.START)
-        } else if (drawer_layout.isDrawerOpen(GravityCompat.END)) {
-            drawer_layout.closeDrawer(GravityCompat.END)
-        } else if (bottomSheetBehavior.state != BottomSheetBehavior.STATE_COLLAPSED) {
-          bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
-        } else {
-            super.onBackPressed()
+        when {
+            drawer_layout.isDrawerOpen(GravityCompat.START) -> drawer_layout.closeDrawer(GravityCompat.START)
+            drawer_layout.isDrawerOpen(GravityCompat.END) -> drawer_layout.closeDrawer(GravityCompat.END)
+            bottomSheetBehavior.state != BottomSheetBehavior.STATE_COLLAPSED -> bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
+            else -> super.onBackPressed()
         }
     }
 
@@ -44,13 +41,13 @@ class MainActivity : AppCompatActivity() {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        when (item.itemId) {
-            R.id.action_settings -> return true
+        return when (item.itemId) {
+            R.id.action_settings -> true
             R.id.action_menu -> {
                 drawer_layout.openDrawer(GravityCompat.END)
-                return true
+                true
             }
-            else -> return super.onOptionsItemSelected(item)
+            else -> super.onOptionsItemSelected(item)
         }
     }
 
@@ -75,6 +72,7 @@ class MainActivity : AppCompatActivity() {
 
         val navListener = NavListener(this)
         nav_view.setNavigationItemSelectedListener(navListener)
-        nav_view2.setNavigationItemSelectedListener(navListener)
+        nav_view2.setNavigationItemSelectedListener(navListener)// TODO: Check into optionally changing color and what not in the nav menu?
     }
 }
+// TODO: look into grid layout? https://codelabs.developers.google.com/codelabs/mdc-102-kotlin/#0
