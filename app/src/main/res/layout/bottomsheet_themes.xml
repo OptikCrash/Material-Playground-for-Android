@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottom_sheet_themes"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/bottom_sheet_height"
+    app:behavior_hideable="false"
+    app:behavior_peekHeight="58dp"
+    app:layout_behavior="@string/bottom_sheet_behavior"
+>
+
+  <androidx.cardview.widget.CardView
+      android:layout_width="match_parent"
+      android:layout_height="56dp"
+      android:layout_marginTop="2dp"
+      android:background="?android:colorBackground"
+      app:cardElevation="4dp"
+  >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="4dp"
+        android:elevation="4dp"
+    >
+      <com.google.android.material.switchmaterial.SwitchMaterial
+          android:id="@+id/switch_dark_mode"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:paddingStart="4dp"
+          android:paddingEnd="8dp"
+          android:text="@string/dark_mode"
+          android:layout_marginTop="8dp"
+          android:layout_marginBottom="8dp"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintTop_toTopOf="parent"
+          android:layout_marginStart="8dp" app:layout_constraintStart_toStartOf="parent" android:layout_marginEnd="8dp"
+          app:layout_constraintEnd_toStartOf="@+id/view"/>
+
+      <View
+          android:layout_width="1dp"
+          android:layout_height="match_parent"
+          android:background="@color/seperator"
+          android:layout_marginStart="8dp"
+          android:id="@+id/view" android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent"
+          android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+          android:layout_marginEnd="8dp"/>
+      <TextView
+          style="@style/Text.Body1"
+          android:text="@string/theme"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="8dp"
+          android:layout_marginBottom="8dp"
+          android:layout_marginStart="8dp"
+          app:layout_constraintStart_toEndOf="@+id/view"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintBottom_toBottomOf="parent" android:id="@+id/textView2"/>
+
+      <com.digitalrelay.materialplayground.views.ThemeView
+          android:id="@+id/theme_selected"
+          android:layout_width="40dp"
+          android:layout_height="40dp"
+          android:layout_marginEnd="8dp"
+          android:onClick="onClick"
+          app:layout_constraintEnd_toEndOf="parent"
+          android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent" android:layout_marginBottom="8dp"
+          app:layout_constraintBottom_toBottomOf="parent"
+          android:layout_marginStart="8dp" app:layout_constraintStart_toEndOf="@+id/textView2"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+  </androidx.cardview.widget.CardView>
+
+  <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/theme_recycler"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="?android:colorBackground"
+  />
+
+</androidx.appcompat.widget.LinearLayoutCompat>
